@@ -1,5 +1,5 @@
 /* ------------------------------------------------------
-   MOBILE-FIRST WEB APP DESIGN
+   MOBILE-FIRST APP UI (BIG FONTS + TOUCH FRIENDLY)
 ------------------------------------------------------- */
 
 *,
@@ -12,61 +12,57 @@ body {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
   background: #050816;
-  color: #e5e7eb;
-  line-height: 1.6;
+  color: #f1f5f9;
+  line-height: 1.7;
+  font-size: 1.05rem; /* Bigger base font */
+  padding-bottom: 2rem;
   -webkit-tap-highlight-color: transparent;
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.2rem;
 }
 
 /* ------------------------------------------------------
-   HEADER (App-style)
+   HEADER
 ------------------------------------------------------- */
 .main-header {
-  background: rgba(2, 6, 23, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(2, 6, 23, 0.85);
+  padding: 1.2rem 1.4rem;
   border-bottom: 1px solid #1f2937;
-  padding: 0.9rem 1rem;
   position: sticky;
   top: 0;
-  z-index: 20;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
 .main-header h1 {
-  font-size: 1.25rem;
-  font-weight: 700;
   margin: 0;
+  font-size: 1.55rem; /* Big title */
+  font-weight: 700;
 }
 
 /* ------------------------------------------------------
-   MOBILE NAVIGATION
+   NAV BAR – Mobile Scrollable Pills
 ------------------------------------------------------- */
 nav {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.9rem;
   overflow-x: auto;
-  padding-bottom: 6px;
+  padding-bottom: 0.5rem;
 }
 
 nav a {
-  padding: 0.45rem 0.8rem;
-  border-radius: 8px;
+  padding: 0.65rem 1.1rem;
   background: #0f172a;
-  font-size: 0.9rem;
+  color: #cbd5e1;
+  border-radius: 0.7rem;
+  font-size: 1rem; /* Bigger items */
+  border: 1px solid #1e293b;
   white-space: nowrap;
-  color: #9ca3af;
-  border: 1px solid transparent;
 }
 
 nav a.active {
@@ -76,93 +72,80 @@ nav a.active {
   border-color: #16a34a;
 }
 
-nav a:hover {
-  background: #1e293b;
-  color: #fff;
-}
-
 /* ------------------------------------------------------
-   CARDS (Mobile App Style)
+   CARDS (Big Padding + App UI)
 ------------------------------------------------------- */
 .card {
   background: rgba(15, 23, 42, 0.65);
-  border-radius: 1rem;
-  padding: 1.25rem;
-  margin-top: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  margin-top: 1.3rem;
+  backdrop-filter: blur(10px);
 }
 
 .card h2 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1.15rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
 /* ------------------------------------------------------
-   INPUTS (Larger for Mobile)
+   INPUTS (Big Size)
 ------------------------------------------------------- */
 .text-input {
   width: 100%;
-  padding: 0.9rem 0.85rem;
-  border-radius: 0.6rem;
-  border: 1px solid #334155;
+  padding: 1.05rem 1rem; /* Bigger box */
+  border-radius: 0.65rem;
+  border: 1px solid #374151;
   background: #0f172a;
-  color: #e5e7eb;
-  font-size: 1rem;
+  color: #fff;
+  font-size: 1.05rem; /* Bigger text */
 }
 
 .text-input:focus {
   border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.35);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.4);
 }
 
 .field-label {
-  margin-bottom: 0.4rem;
-  font-size: 0.95rem;
-  color: #9ca3af;
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+  color: #cbd5e1;
 }
 
 /* ------------------------------------------------------
-   BUTTONS
+   BUTTONS (Big & Touch Friendly)
 ------------------------------------------------------- */
 .btn {
   width: 100%;
-  display: inline-flex;
-  justify-content: center;
-  padding: 0.9rem 1rem;
-  border-radius: 0.6rem;
+  padding: 1.1rem 1rem; /* Bigger button */
+  font-size: 1.1rem;
+  border-radius: 0.75rem;
   border: 1px solid #334155;
   background: #1e293b;
   color: #e5e7eb;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: 0.2s ease;
-}
-
-.btn:hover {
-  background: #273548;
+  font-weight: 600;
 }
 
 .btn.primary {
   background: linear-gradient(to right, #22c55e, #14b8a6);
   border-color: #16a34a;
   color: #022c22;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
-.btn.primary:hover {
-  opacity: 0.9;
-}
-
 /* ------------------------------------------------------
-   GRID (Mobile → Desktop)
+   GRID (Mobile First)
 ------------------------------------------------------- */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 @media (min-width: 768px) {
@@ -172,39 +155,38 @@ nav a:hover {
 }
 
 /* ------------------------------------------------------
-   TABLE (Mobile Scroll)
+   TABLE (Mobile Scroll First)
 ------------------------------------------------------- */
 .table-wrapper {
   overflow-x: auto;
-  margin-top: 1rem;
-  border-radius: 0.6rem;
+  margin-top: 1.3rem;
 }
 
 table {
   width: 100%;
-  min-width: 600px;
+  min-width: 650px;
   border-collapse: collapse;
 }
 
 th,
 td {
-  padding: 0.75rem;
+  padding: 1rem; /* Bigger table cells */
+  font-size: 1rem;
   border-bottom: 1px solid #1f2937;
-  white-space: nowrap;
 }
 
 th {
   background: #0f172a;
-  font-size: 0.9rem;
+  color: #cbd5e1;
+  font-size: 1.05rem;
 }
 
 /* ------------------------------------------------------
    FOOTER
 ------------------------------------------------------- */
 .main-footer {
-  padding: 1rem 0;
+  padding: 1.3rem 0;
+  font-size: 1rem;
   text-align: center;
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 2rem;
+  color: #64748b;
 }
