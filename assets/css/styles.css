@@ -1,186 +1,192 @@
-/* ----------------------------------------------------------
-   MOBILE UI PACK – Modern Web App Styling
-   Drop-in CSS for mobile responsive layout, fonts, buttons,
-   forms, cards, navbar, grids, spacing, animations.
----------------------------------------------------------- */
+/* ------------------------------------------------------
+   MOBILE-FIRST APP UI (BIG FONTS + TOUCH FRIENDLY)
+------------------------------------------------------- */
 
-/* GLOBAL RESET + SMOOTHNESS */
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #f7f7f7;
-  color: #222;
-  line-height: 1.6;
-  padding: 10px;
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #050816;
+  color: #f1f5f9;
+  line-height: 1.7;
+  font-size: 1.05rem; /* Bigger base font */
+  padding-bottom: 2rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* GLOBAL MOBILE FONTS */
-h1 { font-size: 1.8rem; font-weight: 700; }
-h2 { font-size: 1.6rem; font-weight: 600; }
-h3 { font-size: 1.3rem; font-weight: 500; }
-p, label, input, button { font-size: 1.1rem; }
-
-/* ----------------------------------------------------------
-   MOBILE CONTAINER
----------------------------------------------------------- */
 .container {
   width: 100%;
-  max-width: 500px;
-  margin: auto;
-  padding: 15px;
+  margin: 0 auto;
+  padding: 1.2rem;
 }
 
-/* ----------------------------------------------------------
-   NAVBAR (Mobile Web App Style)
----------------------------------------------------------- */
-.navbar {
-  background: white;
-  padding: 15px;
+/* ------------------------------------------------------
+   HEADER
+------------------------------------------------------- */
+.main-header {
+  background: rgba(2, 6, 23, 0.85);
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid #1f2937;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 1.55rem; /* Big title */
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------
+   NAV BAR – Mobile Scrollable Pills
+------------------------------------------------------- */
+nav {
+  margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  gap: 0.9rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
 }
 
-.navbar a {
-  font-size: 1.2rem;
+nav a {
+  padding: 0.65rem 1.1rem;
+  background: #0f172a;
+  color: #cbd5e1;
+  border-radius: 0.7rem;
+  font-size: 1rem; /* Bigger items */
+  border: 1px solid #1e293b;
+  white-space: nowrap;
+}
+
+nav a.active {
+  background: #22c55e;
+  color: #022c22;
   font-weight: 600;
-  text-decoration: none;
-  color: #333;
+  border-color: #16a34a;
 }
 
-/* ----------------------------------------------------------
-   MOBILE BUTTONS
----------------------------------------------------------- */
-.btn {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  text-align: center;
-  border-radius: 12px;
-  margin: 12px 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: #007bff;
-  color: white;
-  border: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.03);
-}
-
-/* Secondary */
-.btn-secondary {
-  background: #555;
-}
-
-.btn-danger {
-  background: #ff4f4f;
-}
-
-/* ----------------------------------------------------------
-   MOBILE FRIENDLY FORMS
----------------------------------------------------------- */
-input, select, textarea {
-  width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  background: white;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0,123,255,0.3);
-}
-
-/* ----------------------------------------------------------
-   MOBILE CARDS (Modern Web App)
----------------------------------------------------------- */
+/* ------------------------------------------------------
+   CARDS (Big Padding + App UI)
+------------------------------------------------------- */
 .card {
-  background: white;
-  border-radius: 18px;
-  padding: 18px;
-  margin: 15px 0;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  margin-top: 1.3rem;
+  backdrop-filter: blur(10px);
 }
 
-.card:hover {
-  transform: translateY(-3px);
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
-/* Card title bigger on mobile */
-.card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
+/* ------------------------------------------------------
+   INPUTS (Big Size)
+------------------------------------------------------- */
+.text-input {
+  width: 100%;
+  padding: 1.05rem 1rem; /* Bigger box */
+  border-radius: 0.65rem;
+  border: 1px solid #374151;
+  background: #0f172a;
+  color: #fff;
+  font-size: 1.05rem; /* Bigger text */
 }
 
-/* ----------------------------------------------------------
-   GRID (Mobile Adaptive)
----------------------------------------------------------- */
+.text-input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.35);
+  outline: none;
+}
+
+.field-label {
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+/* ------------------------------------------------------
+   BUTTONS (Big & Touch Friendly)
+------------------------------------------------------- */
+.btn {
+  width: 100%;
+  padding: 1.1rem 1rem; /* Bigger button */
+  font-size: 1.1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: linear-gradient(to right, #22c55e, #14b8a6);
+  border-color: #16a34a;
+  color: #022c22;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------
+   GRID (Mobile First)
+------------------------------------------------------- */
 .grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-/* On mobile collapse to 1 column */
-@media (max-width: 480px) {
-  .grid-2, .grid-3 {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ----------------------------------------------------------
+/* ------------------------------------------------------
+   TABLE (Mobile Scroll First)
+------------------------------------------------------- */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.3rem;
+}
+
+table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem; /* Bigger table cells */
+  font-size: 1rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+th {
+  background: #0f172a;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+}
+
+/* ------------------------------------------------------
    FOOTER
----------------------------------------------------------- */
-.footer {
+------------------------------------------------------- */
+.main-footer {
+  padding: 1.3rem 0;
+  font-size: 1rem;
   text-align: center;
-  padding: 15px;
-  font-size: 1.1rem;
-  margin-top: 20px;
-  color: #555;
-}
-
-/* ----------------------------------------------------------
-   LISTS
----------------------------------------------------------- */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
-/* ----------------------------------------------------------
-   MODERN MOBILE ANIMATION
----------------------------------------------------------- */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  color: #64748b;
 }
